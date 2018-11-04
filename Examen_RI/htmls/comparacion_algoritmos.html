@@ -8,8 +8,8 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 .w3-bar,h1,button {font-family: "Montserrat", sans-serif}
@@ -68,41 +68,149 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 <!-- First Grid -->
 <div class="w3-row-padding w3-padding-64 w3-container">
   <div class="w3-content">
-    <div class="w3-twothird">
-      <h1>Algoritmos de Similaridad y Distancia</h1>
-      <h5 class="w3-padding-32">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h5>
+ 
+      <h1>Comparación entre los algoritmos: Hamming, Levenshtein y Bigramas</h1>
 
-      <p class="w3-text-grey">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-        laboris nisi ut aliquip ex ea commodo consequat.</p>
-    </div>
+      <p class="w3-text-grey">Aquí va a haber una tablita para comparar las cosas como en la presentación</p>
 
-    <div class="w3-third w3-center">
-      <i class="fa fa-anchor w3-padding-64 w3-text-blue"></i>
-    </div>
+      <div class="w3-container">
+  
+  
+  <table class="w3-table-all w3-xlarge">
+    <tr class="w3-blue">
+      <th class="w3-center">Algoritmo</th>
+      <th class="w3-center">Fácil de idear</th>
+      <th class="w3-center">Fácil para Implementar</th>
+      <th class="w3-center">Resultados</th>
+    </tr>
+    <tr>
+      <td class="w3-center">Hamming</td>
+      <td class="w3-center"><i class="far fa-smile"></i></td>
+      <td class="w3-center"><i class="far fa-smile"></i></td>
+      <td class="w3-center"><i class="far fa-meh"></i></td>
+    </tr>
+    <tr>
+      <td class="w3-center">Levenshtein</td>
+      <td class="w3-center"><i class="far fa-frown"></i></td>
+      <td class="w3-center"><i class="far fa-smile"></i></td>
+      <td class="w3-center"><i class="far fa-smile"></i></td>
+    </tr>
+    <tr>
+      <td class="w3-center">Bigramas</td>
+      <td class="w3-center"><i class="far fa-meh"></i></td>
+      <td class="w3-center"><i class="far fa-smile"></i></td>
+      <td class="w3-center"><i class="far fa-meh"></i></td>
+    </tr>
+  </table>
+</div>
+
   </div>
 </div>
 
 <!-- Second Grid -->
 <div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
   <div class="w3-content">
-    <div class="w3-third w3-center">
-      <i class="fa fa-coffee w3-padding-64 w3-text-blue w3-margin-right"></i>
+
+      <h1>Aplicación</h1>
+
+      <p class="w3-text-grey">Para poder hacer una comparación de los 3 algoritmos, se ha creado una aplicación que permite la entrada de
+      2 palabras o frases para sacar sus diversas distancias.</p>
+
+  <div class="w3-card-4">
+    <div class="w3-container w3-blue">
+      <h2>Calcular Distancia</h2>
     </div>
 
-    <div class="w3-twothird">
-      <h1>Lorem Ipsum</h1>
-      <h5 class="w3-padding-32">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h5>
+    <form class="w3-container w3-white w3-card-4 ">
 
-      <p class="w3-text-grey">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-        laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <label class="w3-text-blue"><b>Primera Palabra</b></label>
+      <input id="inword1" class="w3-input w3-border w3-light-grey w3-margin-bottom" type="text">
+
+      <label class="w3-text-blue"><b>Segunda Palabra</b></label>
+      <input id="inword2" class="w3-input w3-border w3-light-grey w3-margin-bottom" type="text">
+
+      <button class="w3-btn w3-blue w3-margin-bottom" onclick="pressButtonCalcular()" type="button">Calcular</button>
+
+    </form>
+  </div>
+
+  <!-- Palabras a comparar </-->
+  <div class="w3-card-4">
+    <div class="w3-container w3-blue">
+      <h2 id="words_comparation">Diferencia entre Palabras</h2>
     </div>
+
+    <div class="w3-container w3-white w3-card-4">
+      <p>
+        <b  class="w3-text-blue">Palabra 1: </b>
+        <span id="word1"></span>
+      </p>
+      <p>
+        <b  class="w3-text-blue">Palabra 2: </b>
+        <span id="word2"></span>
+      </p>
+    </div>
+  </div>
+
+<!-- Hamming </-->
+  <div class="w3-card-4">
+    <div class="w3-container w3-blue">
+      <h2>Distancia Hamming</h2>
+    </div>
+
+    <div class="w3-container w3-white w3-card-4">
+      <p>
+        <b  class="w3-text-blue">Distancia: </b>
+        <span id="hamming_distance"></span>
+      </p>
+
+      <!--<p>
+        <b  class="w3-text-blue">Tiempo: </b>
+        <span id="hamming_time"></span>
+      </p></-->
+    </div>
+  </div>
+<!-- Levenshtein </-->
+  <div class="w3-card-4">
+    <div class="w3-container w3-blue">
+      <h2>Distancia Levenshtein</h2>
+    </div>
+
+    <div class="w3-container w3-white w3-card-4">
+     <p>
+        <b  class="w3-text-blue">Distancia: </b>
+        <span id="levenshtein_distance"></span>
+      </p>
+
+      <!--<p>
+        <b  class="w3-text-blue">Tiempo: </b>
+        <span id="levenshtein_time"></span>
+      </p></-->
+    </div>
+  </div>
+<!-- Bigramas </-->
+  <div class="w3-card-4">
+    <div class="w3-container w3-blue">
+      <h2>Distancia Bigramas</h2>
+    </div>
+
+    <div class="w3-container w3-white w3-card-4">
+      <p>
+        <b  class="w3-text-blue">Distancia: </b>
+        <span id="bigrams_distance"></span>
+      </p>
+
+      <!--<p>
+        <b  class="w3-text-blue">Tiempo: </b>
+        <span id="bigrams_time"></span>
+      </p></-->
+    </div>
+  </div>
   </div>
 </div>
 
+
 <div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
-    <h1 class="w3-margin w3-xlarge">Quote of the day: live life</h1>
 </div>
 
 <!-- Footer -->
@@ -123,5 +231,6 @@ function myFunction() {
 }
 </script>
 
+<script src="../scripts/Distance_Calculator.js"></script>
 </body>
 </html>
