@@ -42,34 +42,95 @@
 
 <div class="container mt-5">
 
-    <div class="row">
-        <h1 class="m-auto">Algoritmos de Similaridad y Distancia</h1>
+    <div class="row w3-margin-bottom">
+        <h1 class="m-auto ">Algoritmos de Similaridad y Distancia</h1>
     </div>
 
-    <div class="row mt-5">
 
-        <button class="tablink col-sm-4" onclick="openPage('Hamming', this, 'red')" id="defaultOpen">Hamming</button>
-        <button class="tablink col-sm-4" onclick="openPage('Levenshtein', this, 'green')">Levenshtein</button>
-        <button class="tablink col-sm-4" onclick="openPage('Bigramas', this, 'blue')">Bigramas</button>
+    <!-- Teoría -->
+    <div class="content">
+        <p class="w3-text-gray">Antes de empezar a explicar los algoritmos perce, se deben entender algunos conceptos básicos relacionados a la similaridad y distancia.
+        </p>
+
+        <ul class="w3-text-gray">
+            <li><b class="w3-text-blue">Modelo de Similaridad: </b> Representación matemática para resolver el cálculo de la similaridad. Soporte para realizar búsquedas basadas en patrones erróneos de digitación, deletreo, escaneo, etc.</li>
+            <li><b class="w3-text-blue">Funciones de Distancia: </b> Establecen metodología y nivel de error permitido, unas miden si la hilera es aceptable o no y otras dan la similaridad.</li>
+            <li><b class="w3-text-blue">Noción de Distancia: </b> Es la diferencia percibida al comparar dos hileras.</li>
+            <li><b class="w3-text-blue">Algoritmos de Similaridad y Distancia: </b> Funciones que permiten calcular la diferencia o similaridad entre hileras.</li>
+        </ul>
+        <p class="w3-text-gray">Es importante destacar que las funciones de similaridad y distancia tiene que cumplir las siguientes condiciones:</p>
+        <div class="content"><img class="w3-padding-32 center" src="../img/condiciones.PNG" alt="Cubo Hamming"></div>
+
+        <p class="w3-text-gray">Cuando se habla de funciones de similitud sobre cadenas de texto, podemos separar los diversos algoritmos en 2 grandes grupos:</p>
+
+        <ul class="w3-text-gray">
+            <li><b class="w3-text-blue">Funciones de Similitud basadas en caracteres: </b> Estas funciones de similitud consideran cada cadena de caracteres como una secuencia ininterrumpida de caracteres.</li>
+            <li><b class="w3-text-blue">Funciones de Similitud basadas en tokens: </b> Estas funciones de similitud consideran cada cadena como un conjunto de subcadenas separadas por caracteres  especiales, como por ejemplo espacios en blanco, puntos y comas, esto es, como un conjunto de tokens, y calculan la similitud entre cada pareja de tokens mediante alguna función de similitud basada en caracteres.</li>
+        </ul>
+        
+        <p class="w3-text-gray"> A continuación se presentan 3 algoritmos basados en caracteres: Hamming, Levenshtein y Bigramas.</p>
+    </div>
+    
+
+    <!-- Tabla -->
+    <div class="row mt-5 w3-card">
+
+        <button class="tablink col-sm-4" onclick="openPage('Hamming', this, '#E15554')" id="defaultOpen">Hamming</button>
+        <button class="tablink col-sm-4" onclick="openPage('Levenshtein', this, '#3BB273')">Levenshtein</button>
+        <button class="tablink col-sm-4" onclick="openPage('Bigramas', this, '#7768AE')">Bigramas</button>
 
         <div id="tab-holder">
             <div id="Hamming" class="tabcontent">
                 <h3>Hamming</h3>
-                <p>Hamming is where the heart is..</p>
+                <p>Esta distancia toma dos hileras del mismo tamaño y calcula el número de posiciones donde los caracteres son diferentes. Este algoritmo pretende calcular el menor número de sustituciones necesarias para que una hilera sea igual a la otra.</p>
+                <p>
+                Hamming, de hecho, es utilizado mayormente en la detección y corrección en hileras de bits en campos como el de telecomunicaciones, criptografía y la teoría de códigos. Si escogemos el campo de las telecomunicaciones realmente solo importa comparar si en una posición hay un 1 o un 0, sin embargo, este mismo concepto se puede llevar al nivel de caracteres.
+                </p>
+                <h2>Ejemplo</h2>
+                <p>A continuación se mostrará un ejemplo del algoritmo: </p>
+                <h2>Implementación</h2>
+                <p>El código para implementar este algoritmo en JAVA es el siguiente:</p>
+
+                <script src="https://gist.github.com/JhosuaArias/92f525360818dd191c966433fe7aee64.js?file=Hamming.java"></script>
+
+
             </div>
 
             <div id="Levenshtein" class="tabcontent">
                 <h3>Levenshtein</h3>
                 <p>Some Levenshtein this fine day!</p>
+
+                <h2>Ejemplo</h2>
+                <p>A continuación se mostrará un ejemplo del algoritmo: </p>
+
+                <h2>Implementación</h2>
+                <p>El código para implementar este algoritmo en JAVA es el siguiente:</p>
+                <script src="https://gist.github.com/JhosuaArias/92f525360818dd191c966433fe7aee64.js?file=Levenshtein.java"></script>
             </div>
 
             <div id="Bigramas" class="tabcontent">
                 <h3>Bigramas</h3>
                 <p>Get in touch, or swing by for a cup of coffee.</p>
+
+                <h2>Ejemplo</h2>
+                <p>A continuación se mostrará un ejemplo del algoritmo: </p>
+
+                <h2>Implementación</h2>
+                <p>El código para implementar este algoritmo en JAVA es el siguiente:</p>
+                <script src="https://gist.github.com/JhosuaArias/92f525360818dd191c966433fe7aee64.js?file=Bigrams.java"></script>
             </div>
         </div>
     </div>
 
+    <!-- Github -->
+    <div class="w3-margin-top">
+        <h3>Descargas</h3>
+        <p class="w3-text-gray">En este <a href="https://github.com/JhosuaArias/Distance_Algorithms.git">link</a> se puede conseguir un proyecto en Github con los algoritmos implementados.</p>
+    </div>
+    
+</div>
+
+<div class=" w3-container w3-black w3-center w3-opacity w3-padding-64">
 </div>
 
 <!-- Footer -->

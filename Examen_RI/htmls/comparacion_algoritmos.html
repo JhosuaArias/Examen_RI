@@ -9,12 +9,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-
-<style>
-body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
-.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
-.fa-anchor,.fa-coffee {font-size:200px}
-</style>
+<link rel="stylesheet" type="text/css" href="css/master.css">
 </head>
 <body>
 
@@ -48,66 +43,79 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 <!-- First Grid -->
 <div class="w3-row-padding w3-padding-64 w3-container">
   <div class="w3-content">
- 
-      <h1>Comparación entre los algoritmos: Hamming, Levenshtein y Bigramas</h1>
+    <h1>Comparación entre los algoritmos: Hamming, Levenshtein y Bigramas</h1>
 
-      <p class="w3-text-grey">Aquí va a haber una tablita para comparar las cosas como en la presentación</p>
+    <p class="w3-text-grey">A continuación se presenta una tabla, la cual hace una comparación entre los tres algoritmos:</p>
 
-      <div class="w3-container">
-  
-  
-  <table class="w3-table-all w3-xlarge">
-    <tr class="w3-blue">
-      <th class="w3-center">Algoritmo</th>
-      <th class="w3-center">Fácil de idear</th>
-      <th class="w3-center">Fácil para Implementar</th>
-      <th class="w3-center">Resultados</th>
-    </tr>
-    <tr>
-      <td class="w3-center">Hamming</td>
-      <td class="w3-center"><i class="far fa-smile"></i></td>
-      <td class="w3-center"><i class="far fa-smile"></i></td>
-      <td class="w3-center"><i class="far fa-meh"></i></td>
-    </tr>
-    <tr>
-      <td class="w3-center">Levenshtein</td>
-      <td class="w3-center"><i class="far fa-frown"></i></td>
-      <td class="w3-center"><i class="far fa-smile"></i></td>
-      <td class="w3-center"><i class="far fa-smile"></i></td>
-    </tr>
-    <tr>
-      <td class="w3-center">Bigramas</td>
-      <td class="w3-center"><i class="far fa-meh"></i></td>
-      <td class="w3-center"><i class="far fa-smile"></i></td>
-      <td class="w3-center"><i class="far fa-meh"></i></td>
-    </tr>
-  </table>
-</div>
+    <div class="w3-container"> 
+      <table class="w3-table-all w3-xlarge">
+        <tr class="w3-blue">
+          <th class="w3-center">Algoritmo</th>
+          <th class="w3-center">Fácil de idear</th>
+          <th class="w3-center">Fácil para Implementar</th>
+          <th class="w3-center">Resultados</th>
+        </tr>
+        <tr>
+          <td class="w3-center">Hamming</td>
+          <td class="w3-center"><i class="far fa-smile"></i></td>
+          <td class="w3-center"><i class="far fa-smile"></i></td>
+          <td class="w3-center"><i class="far fa-meh"></i></td>
+        </tr>
+        <tr>
+          <td class="w3-center">Levenshtein</td>
+          <td class="w3-center"><i class="far fa-frown"></i></td>
+          <td class="w3-center"><i class="far fa-smile"></i></td>
+          <td class="w3-center"><i class="far fa-smile"></i></td>
+        </tr>
+        <tr>
+          <td class="w3-center">Bigramas</td>
+          <td class="w3-center"><i class="far fa-meh"></i></td>
+          <td class="w3-center"><i class="far fa-smile"></i></td>
+          <td class="w3-center"><i class="far fa-meh"></i></td>
+        </tr>     
+      </table>
+    </div>
+    
+    <div class="content">  
+      <div class="w3-third">
+        <h3 class="w3-center">Hamming</h3>
+        <ul class="w3-text-grey text-justify">
+          <li>El resultado da pesos diferentes dependiendo del tamaño de las hileras.</li>
+          <li>Es muy literal al comparar, por eso las hileras tienen que ser del mismo tamaño, si no, la distancia aumenta.</li>
+        </ul>
+      </div>
 
-  </div>
-</div>
+      <div class="w3-third">
+        <h3 class="w3-center">Levenshtein</h3>
+        <ul class="w3-text-grey text-justify">
+          <li>Es una generalización de Hamming por lo que no depende del tamaño de las hileras.</li>
+          <li>Al ser más general que los otros dos, da resultados buenos para la mayoría de casos. </li>
+        </ul>
+      </div>
 
-<!-- Second Grid -->
-<div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
-  <div class="w3-content">
-
-      <h1>Aplicación</h1>
-
-      <p class="w3-text-grey">Para poder hacer una comparación de los 3 algoritmos, se ha creado una aplicación que permite la entrada de
-      2 palabras o frases para sacar sus diversas distancias.</p>
-
-  <div class="w3-card-4">
-    <div class="w3-container w3-blue">
-      <h2>Calcular Distancia</h2>
+      <div class="w3-third">
+        <h3 class="w3-center">Bigramas</h3>
+        <ul class="w3-text-grey text-justify">
+          <li>Sus resultados son buenos para algunos contextos como para lematizadores.</li>
+          <li>Hileras como “cascada” y “cascadas” tiene resultado 1. </li>
+          <li>Algunas hileras pueden ser diferentes pero las ve como iguales</li>
+        </ul>
+      </div>
     </div>
 
-    <form class="w3-container w3-white w3-card-4 ">
-
-      <label class="w3-text-blue"><b>Primera Palabra</b></label>
-      <input id="inword1" class="w3-input w3-border w3-light-grey w3-margin-bottom" type="text">
-
-      <label class="w3-text-blue"><b>Segunda Palabra</b></label>
-      <input id="inword2" class="w3-input w3-border w3-light-grey w3-margin-bottom" type="text">
+  </div></div><!-- Second Grid --><div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">  <div class="w3-content">
+    <h1>Aplicación</h1>
+    <p class="w3-text-grey">Para poder hacer una comparación de los 3 algoritmos, se ha creado una aplicación que permite la entrada de
+    2 palabras o frases para sacar sus diversas distancias.</p>
+<div class="w3-card-4">
+  <div class="w3-container w3-blue">
+    <h2>Calcular Distancia</h2>    </div>
+    <form class="w3-container w3-white -card-4 ">
+    <label class="w3-text-blue"><b>Primera Palabra</b></label>
+    <input id="inword1" class="w3-input w3-border w3-light-grey w3-margin-bottom" type="text">
+    <label class="w3-text-blue"><b>Segunda Palabra</b></label>
+    <input id="inword2" class="w3-input w3-border w3-light-grey w3-margin-bottom" type
+    ="text">
 
       <button class="w3-btn w3-blue w3-margin-bottom" onclick="pressButtonCalcular()" type="button">Calcular</button>
 
