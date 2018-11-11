@@ -1,8 +1,8 @@
 
 /**Hamming Distance**/
 function computeHammingDistance(string1, string2) {
-	var string1Length = string1.length;
-    var string2Length = string2.length;
+    let string1Length = string1.length;
+    let string2Length = string2.length;
 
     if(string1Length < string2Length) {
         string1 = fillStringWithEmptyChar(string1,string2Length-string1Length);
@@ -16,15 +16,15 @@ function computeHammingDistance(string1, string2) {
 }
 
 function  fillStringWithEmptyChar(string, emptyCharNumber){
-	var array = [string];
-        for (let i = 1; i <= emptyCharNumber; i++) {
+    let array = [string];
+    for (let i = 1; i <= emptyCharNumber; i++) {
             array[i] = String.fromCharCode(0);
         }
         return array.join("");
 }
 
 function compareStringsHammingDistance(string1, string2){
-    var hammingDistance = 0; // Zero means that both string are equal.
+    let hammingDistance = 0; // Zero means that both string are equal.
 
     for (let i = 0; i < string1.length ; i++) {
         if(string1.charAt(i) != string2.charAt(i)) {
@@ -36,9 +36,9 @@ function compareStringsHammingDistance(string1, string2){
 
 /**Levenshtein Distance**/
 function computeLevenshteinDistance(string1, string2, stepByStep){
-	var X = string1.length;
-    var Y = string2.length;
-    var distance = new Array(X+1);
+    let X = string1.length;
+    let Y = string2.length;
+    let distance = new Array(X + 1);
     for (i=0; i < X+1; i++)
     	distance[i] = new Array(Y+1);
 
@@ -54,7 +54,7 @@ function computeLevenshteinDistance(string1, string2, stepByStep){
     for (let i = 1; i <= X; i++) {
         for (let j = 1; j <= Y; j++) {
 
-            cost = (string1.charAt(i-1) == string2.charAt(j-1))? 0 : 1;
+            cost = (string1.charAt(i-1) === string2.charAt(j-1))? 0 : 1;
 
             distance[i][j] = min(
             	distance[i-1][j] + 1,       // Deletion
@@ -79,22 +79,22 @@ function min(n1, n2, n3) {
 
 /**Bigrams Distance**/
 function computeBigramsDistance(string1, string2) {
-	var uniqueBigramsString1 = getUniqueBigrams(string1);
-	var uniqueBigramsString2 = getUniqueBigrams(string2);
+    let uniqueBigramsString1 = getUniqueBigrams(string1);
+    let uniqueBigramsString2 = getUniqueBigrams(string2);
 
-	console.log(uniqueBigramsString1);
+    console.log(uniqueBigramsString1);
 	console.log(uniqueBigramsString2);
 
-	var commomBigramsCounter = compareBigrams(Array.from(uniqueBigramsString1), Array.from(uniqueBigramsString2));
+    let commomBigramsCounter = compareBigrams(Array.from(uniqueBigramsString1), Array.from(uniqueBigramsString2));
 
-	return computeBigramsDistanceFormula(commomBigramsCounter, uniqueBigramsString1.size, uniqueBigramsString2.size);
+    return computeBigramsDistanceFormula(commomBigramsCounter, uniqueBigramsString1.size, uniqueBigramsString2.size);
 }
 
 function getUniqueBigrams(string){
-	var uniqueBigrams = new Set();
+    let uniqueBigrams = new Set();
 
-	var currentBigram;
-	 for (let i = 0; i < string.length-1 ; i++) {
+    let currentBigram;
+    for (let i = 0; i < string.length-1 ; i++) {
         currentBigram = string.substring(i,i+2);
         uniqueBigrams.add(currentBigram);
     }
@@ -103,8 +103,8 @@ function getUniqueBigrams(string){
 }
 
 function compareBigrams(uniqueBigramsString1, uniqueBigramsString2) {
-	var commonBigramsCounter = 0;
-		console.log(uniqueBigramsString1);
+    let commonBigramsCounter = 0;
+    console.log(uniqueBigramsString1);
         for (let bigram of uniqueBigramsString1) {
             if(uniqueBigramsString2.includes(bigram)){
                 commonBigramsCounter++;
@@ -120,39 +120,39 @@ function computeBigramsDistanceFormula(commonBigramsAB, uniqueBigramsA, uniqueBi
 
 function pressButtonCalcular(){
     /**Getting all components**/
-    var component_word1 = document.getElementById("inword1");
-    var component_word2 = document.getElementById("inword2");
+    let component_word1 = document.getElementById("inword1");
+    let component_word2 = document.getElementById("inword2");
 
-    var component_Palabra1 = document.getElementById("word1"); 
-    var component_Palabra2 = document.getElementById("word2");
+    let component_Palabra1 = document.getElementById("word1");
+    let component_Palabra2 = document.getElementById("word2");
 
-    var component_hamming_distance = document.getElementById("hamming_distance");
-    var component_levenshtein_distance = document.getElementById("levenshtein_distance");
-    var component_bigrams_distance = document.getElementById("bigrams_distance");
+    let component_hamming_distance = document.getElementById("hamming_distance");
+    let component_levenshtein_distance = document.getElementById("levenshtein_distance");
+    let component_bigrams_distance = document.getElementById("bigrams_distance");
 
-    var component_hamming_time = document.getElementById("hamming_time");
-    var component_levenshtein_time = document.getElementById("levenshtein_time");
-    var component_bigrams_time = document.getElementById("bigrams_time");
+    let component_hamming_time = document.getElementById("hamming_time");
+    let component_levenshtein_time = document.getElementById("levenshtein_time");
+    let component_bigrams_time = document.getElementById("bigrams_time");
 
 
-       /**Setting words in the HTML document**/
-    var word1_text = component_word1.value;
-    var word2_text = component_word2.value;
+    /**Setting words in the HTML document**/
+    let word1_text = component_word1.value;
+    let word2_text = component_word2.value;
 
     component_Palabra1.innerHTML = word1_text;
     component_Palabra2.innerHTML = word2_text;
 
-        /**Making LowerCase the words**/
+    /**Making LowerCase the words**/
     word1_text = word1_text.toLowerCase();
     word2_text = word2_text.toLowerCase();
 
-       /**Making distance and time vars**/
-    var hamming_distance;
-    var levenshtein_distance;
-    var bigrams_distance;
+    /**Making distance and time vars**/
+    let hamming_distance;
+    let levenshtein_distance;
+    let bigrams_distance;
 
     /** Computing distances here **/
-    var performance = window.performance;
+    let performance = window.performance;
 
     const hamming_start_time = performance.now();
     hamming_distance = computeHammingDistance(word1_text, word2_text);
